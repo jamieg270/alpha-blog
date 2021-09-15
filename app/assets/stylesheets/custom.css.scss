@@ -1,0 +1,104 @@
+@import 'bootstrap/dist/css/bootstrap';
+$headings-color: white;
+:root {
+	--mainbgcolor: #030B15; 
+}
+
+body {
+	position: relative;
+	background-color: var(--mainbgcolor);
+	color: white;
+	min-height: 100vh;
+	padding-bottom: 60px;
+}
+.text-link {
+	color: var(--bs-orange);
+	text-decoration: none;
+	transition: .3s ease-in-out;
+ 	&:hover {
+		color: var(--bs-red);
+	}
+}
+.navbar {
+	background-color: transparent !important;
+	border-bottom: 1px solid transparent;
+}
+body.homepage {
+	
+	background-image: asset-url('building-690854_1920_smll.jpg');
+	background-size: cover;
+}
+
+ .card {
+	 background-color: rgba(255, 255, 255, 0.02);
+	 margin-bottom: 30px;
+	 border: 1px solid rgba(53, 54, 76, 1);
+	 
+	 .card-body {
+		 background-color: transparent;
+	 }
+	 .card-header, .card-footer {
+		 background-color: rgba(255, 255, 255, 0.05);
+	 }
+ }
+.container-md {
+	max-width: 800px;
+}
+.navbar-brand {
+	font-size: 3rem;
+	color: white;
+	font-weight: 200;
+	padding-left: 20px;
+	small {
+		display: block;
+		font-size: 1.18rem;
+		margin-top: -10px;
+		margin-bottom: 20px;
+	}
+}
+body:not(.homepage) {
+	.navbar {
+		border-bottom: 1px solid rgba(195, 195, 195, 1);
+		background-image: asset-url('navbar-img_processed.jpeg');
+		background-position: left;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	.navbar-brand {
+		padding-left: 170px;	
+	}
+}
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	color: white;
+	.container-full {
+		padding: 10px 30px;
+	}
+	a {
+		color: white;
+		text-decoration: none;
+	}
+}
+ 
+ 
+a.signup {
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	font-size: 3rem;
+	font-weight: 200;
+	text-decoration: none;
+	color: var(--bs-orange);
+	transition: .3s ease-in-out;
+	&:hover {
+		color: var(--bs-red);
+	}
+}
+
+h1 {
+}

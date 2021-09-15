@@ -1,17 +1,26 @@
-<%= render 'error_messages' %>
+<%= render 'shared/error_messages' %>
 
 <%= form_with(model: @article, local: true)  do |f| %>
-	<p>
-		<%= f.label :title %><br />
-		<%= f.text_field :title %>	
-	</p>
+	<div class="form-group row mb-3">
+		<%= f.label :title, class: "col-2 col-form-label" %><br />
+		<div class="col-10">
+			<%= f.text_field :title, class: "form-control", placeholder: "Title of article" %>	
+		</div>
+	</div>
 	
-	<p>
-		<%= f.label :description %><br />
-		<%= f.text_area :description %>
-	</p>
+	<div class="form-group row mb-3">
+		<%= f.label :description, class: "col-2 col-form-label"  %><br />
+		<div class="col-10">
+			<%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description of article" %>
+		</div>
+	</div>
 	
-	<p>
-		<%= f.submit %>
-	</p>
+	<div class="form-group row justify-content-end  mb-5">
+			<%= f.submit class: "col-2 btn btn-outline-light me-3" %>
+	</div>
 <% end %>
+<div class="row">
+	<div class="col-12">
+		<p class="text-center"><%= link_to 'Return to Articles listing', articles_path(), class: "text-link" %></p>
+	</div>
+</div>
