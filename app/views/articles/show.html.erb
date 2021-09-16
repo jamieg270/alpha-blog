@@ -1,8 +1,15 @@
-<div class="container">
-	<h1 class="text-center mt-5 mb-4 ">Showing article details</h1>
-	
-	<p><strong>Title:</strong> <%= @article.title %></p>
-	<p><strong>Description:</strong> <%= @article.description %></p>
-	
-	<p><%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> | <%= link_to 'Return to Articles listing', articles_path() %></p>
+<div class="container-md">
+<h2 class="text-center mt-5 mb-4"><%= @article.title %></h2>
+	<div class="card text-center">
+	  <div class="card-header">
+	    <em>By Jamie Graham</em>
+	  </div>
+	  <div class="card-body">
+	    <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+			 <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-sm btn-outline-light" %> <%= link_to 'Delete', article_path(@article), class: "btn btn-sm btn-outline-light", method: :delete, data: { confirm: "Are you sure?" }%>
+	  </div>
+	  <div class="card-footer text-muted">
+	    <small>Create <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+	  </div>
+	</div>
 </div>
